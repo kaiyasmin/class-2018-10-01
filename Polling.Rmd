@@ -9,7 +9,11 @@ library(tidyverse)
 ```
 
 ```{r, message = FALSE}
-raw <- read_csv("polls_IT-parliament_2018-10-01.csv") 
+raw <- read_csv("polls_IT-parliament_2018-10-01.csv")
+
+raw %>%
+  ggplot(aes(x = date, y = LN, color = "red")) + geom_point() + geom_point(aes(x = date, y = M5S), color = "blue")
+  
 
 
 ```
